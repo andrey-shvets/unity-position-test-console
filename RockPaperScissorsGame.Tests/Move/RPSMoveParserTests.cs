@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using RockPaperScissorsGame.Move;
+using RockPaperScissorsGame.Move.Exceptions;
 
 namespace RockPaperScissorsGame.Tests.Move
 {
@@ -17,9 +18,9 @@ namespace RockPaperScissorsGame.Tests.Move
             move.Should().Be(expectedMove);
         }
 
-        [TestCase("rock", RPSMove.Rock)]
-        [TestCase("PAPER", RPSMove.Paper)]
-        [TestCase("ScIsSoRs", RPSMove.Scissors)]
+        [TestCase(" rock", RPSMove.Rock)]
+        [TestCase("PAPER ", RPSMove.Paper)]
+        [TestCase("\tScIsSoRs", RPSMove.Scissors)]
         public void Parse_ForRockPaperScissorsMoveName_IgnoresCase(string name, RPSMove expectedMove)
         {
             var parser = new RPSMoveParser();
@@ -32,6 +33,9 @@ namespace RockPaperScissorsGame.Tests.Move
         [TestCase("Axe")]
         [TestCase("Rock.")]
         [TestCase("-Paper")]
+        [TestCase(null)]
+        [TestCase("")]
+        [TestCase(" ")]
         public void Parse_ForInvalidMoveName_ThrowsParseMoveException(string name)
         {
             var parser = new RPSMoveParser();

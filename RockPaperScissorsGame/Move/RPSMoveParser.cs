@@ -1,4 +1,6 @@
-﻿namespace RockPaperScissorsGame.Move
+﻿using RockPaperScissorsGame.Move.Exceptions;
+
+namespace RockPaperScissorsGame.Move
 {
     public class RPSMoveParser : IMoveParser
     {

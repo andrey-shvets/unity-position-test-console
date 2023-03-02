@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Players\" />
+    <Folder Include="Move\Exceptions\" />
   </ItemGroup>
 
 </Project>
