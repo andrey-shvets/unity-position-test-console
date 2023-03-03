@@ -4,13 +4,13 @@ using RockPaperScissorsGame.Core.Players.Exceptions;
 
 namespace RockPaperScissorsGame.Core.Players
 {
-    public class RPSPlayer
+    public class RPSPlayer : IPlayer<RPSMove>
     {
         public string Name { get; }
         private IMoveSource MoveSource { get; }
-        private IMoveParser MoveParser { get; }
+        private IMoveParser<RPSMove> MoveParser { get; }
 
-        public RPSPlayer(string name, IMoveSource moveSource, IMoveParser moveParser)
+        public RPSPlayer(string name, IMoveSource moveSource, IMoveParser<RPSMove> moveParser)
         {
             Name = name;
             MoveSource = moveSource;

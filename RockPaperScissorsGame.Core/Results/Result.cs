@@ -3,7 +3,7 @@
     public enum Result
     {
         Beats = 1,
-        Beaten,
+        BeatenBy,
         Tie
     }
 }

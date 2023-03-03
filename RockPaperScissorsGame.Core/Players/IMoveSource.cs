@@ -2,6 +2,6 @@
 {
     public interface IMoveSource
     {
-        public string NextMove();
+        public string? NextMove();
     }
 }

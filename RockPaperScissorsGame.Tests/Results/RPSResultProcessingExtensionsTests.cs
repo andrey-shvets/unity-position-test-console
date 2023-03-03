@@ -16,7 +16,7 @@ namespace RockPaperScissorsGame.Tests.Results
         }
 
         [Test]
-        public void PaperBeatsByRock()
+        public void PaperBeatsRock()
         {
             var result = RPSMove.Paper.Against(RPSMove.Rock);
 
@@ -28,7 +28,7 @@ namespace RockPaperScissorsGame.Tests.Results
         {
             var result = RPSMove.Rock.Against(RPSMove.Paper);
 
-            result.Should().Be(Result.Beaten);
+            result.Should().Be(Result.BeatenBy);
         }
 
         [Test]
@@ -44,7 +44,7 @@ namespace RockPaperScissorsGame.Tests.Results
         {
             var result = RPSMove.Scissors.Against(RPSMove.Rock);
 
-            result.Should().Be(Result.Beaten);
+            result.Should().Be(Result.BeatenBy);
         }
 
         [Test]
@@ -60,7 +60,7 @@ namespace RockPaperScissorsGame.Tests.Results
         {
             var result = RPSMove.Paper.Against(RPSMove.Scissors);
 
-            result.Should().Be(Result.Beaten);
+            result.Should().Be(Result.BeatenBy);
         }
 
         [Test]

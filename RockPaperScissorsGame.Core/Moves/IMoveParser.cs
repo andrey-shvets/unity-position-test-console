@@ -1,7 +1,7 @@
 ﻿namespace RockPaperScissorsGame.Core.Moves
 {
-    public interface IMoveParser
+    public interface IMoveParser<out T> where T : Enum
     {
-        RPSMove Parse(string? moveName);
+        T Parse(string? move);
     }
 }

@@ -2,23 +2,23 @@
 
 namespace RockPaperScissorsGame.Core.Moves
 {
-    public class RPSMoveParser : IMoveParser
+    public class RPSMoveParser : IMoveParser<RPSMove>
     {
-        public RPSMove Parse(string? moveName)
+        public RPSMove Parse(string? move)
         {
-            var isParsed = Enum.TryParse<RPSMove>(moveName, ignoreCase: true, out var move);
+            var isParsed = Enum.TryParse<RPSMove>(move, ignoreCase: true, out var parsedMove);
 
             if (!isParsed)
             {
                 throw new ParseMoveException(
-                    moveName,
-                    $"Unknown rock-paper-scissors move '{moveName}'. "
+                    move,
+                    $"Unknown rock-paper-scissors move '{move}'. "
                     + "Which is impressive, considering all the moves are in the name of the game. "
                     + "But you tried anyway. "
                     + "And you know what? You do you!");
             }
 
-            return move;
+            return parsedMove;
         }
     }
 }
