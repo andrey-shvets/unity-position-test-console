@@ -1,8 +1,8 @@
 ﻿using FluentAssertions;
-using RockPaperScissorsGame.Move;
-using RockPaperScissorsGame.Move.Exceptions;
+using RockPaperScissorsGame.Core.Moves;
+using RockPaperScissorsGame.Core.Moves.Exceptions;
 
-namespace RockPaperScissorsGame.Tests.Move
+namespace RockPaperScissorsGame.Tests.Moves
 {
     internal class RPSMoveParserTests
     {

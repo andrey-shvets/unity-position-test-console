@@ -1,4 +1,4 @@
-﻿namespace RockPaperScissorsGame.Players.Exceptions
+﻿namespace RockPaperScissorsGame.Core.Players.Exceptions
 {
     public class InvalidMoveAttemptException : Exception
     {

@@ -1,8 +1,8 @@
-﻿using RockPaperScissorsGame.Move;
-using RockPaperScissorsGame.Move.Exceptions;
-using RockPaperScissorsGame.Players.Exceptions;
+﻿using RockPaperScissorsGame.Core.Moves;
+using RockPaperScissorsGame.Core.Moves.Exceptions;
+using RockPaperScissorsGame.Core.Players.Exceptions;
 
-namespace RockPaperScissorsGame.Players
+namespace RockPaperScissorsGame.Core.Players
 {
     public class RPSPlayer
     {

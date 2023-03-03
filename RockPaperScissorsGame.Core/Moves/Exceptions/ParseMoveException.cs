@@ -1,4 +1,4 @@
-﻿namespace RockPaperScissorsGame.Move.Exceptions
+﻿namespace RockPaperScissorsGame.Core.Moves.Exceptions
 {
     public class ParseMoveException : Exception
     {

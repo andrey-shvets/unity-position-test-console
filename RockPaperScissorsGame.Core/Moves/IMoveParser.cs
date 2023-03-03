@@ -1,4 +1,4 @@
-﻿namespace RockPaperScissorsGame.Move
+﻿namespace RockPaperScissorsGame.Core.Moves
 {
     public interface IMoveParser
     {

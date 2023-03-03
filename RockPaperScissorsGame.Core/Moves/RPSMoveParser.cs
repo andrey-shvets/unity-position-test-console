@@ -1,6 +1,6 @@
-﻿using RockPaperScissorsGame.Move.Exceptions;
+﻿using RockPaperScissorsGame.Core.Moves.Exceptions;
 
-namespace RockPaperScissorsGame.Move
+namespace RockPaperScissorsGame.Core.Moves
 {
     public class RPSMoveParser : IMoveParser
     {

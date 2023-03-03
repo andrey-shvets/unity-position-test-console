@@ -1,4 +1,4 @@
-﻿namespace RockPaperScissorsGame.Players
+﻿namespace RockPaperScissorsGame.Core.Players
 {
     public interface IMoveSource
     {

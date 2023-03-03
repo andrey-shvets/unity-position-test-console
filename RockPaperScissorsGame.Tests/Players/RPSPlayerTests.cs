@@ -1,8 +1,8 @@
 ﻿using FluentAssertions;
 using NSubstitute;
-using RockPaperScissorsGame.Move;
-using RockPaperScissorsGame.Players;
-using RockPaperScissorsGame.Players.Exceptions;
+using RockPaperScissorsGame.Core.Moves;
+using RockPaperScissorsGame.Core.Players;
+using RockPaperScissorsGame.Core.Players.Exceptions;
 
 namespace RockPaperScissorsGame.Tests.Players
 {
