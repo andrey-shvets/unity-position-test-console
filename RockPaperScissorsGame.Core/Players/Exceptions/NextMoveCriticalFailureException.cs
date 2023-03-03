@@ -4,6 +4,7 @@
     {
         public NextMoveCriticalFailureException(string message, Exception internalException)
             : base(message, internalException)
-        { }
+        {
+        }
     }
 }

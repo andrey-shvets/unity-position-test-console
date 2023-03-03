@@ -1,4 +1,4 @@
-﻿using FluentAssertions;
+﻿using System.Net;
 using NSubstitute;
 using RockPaperScissorsGame.Core.Moves;
 using RockPaperScissorsGame.Core.Players;
@@ -33,18 +33,18 @@ namespace RockPaperScissorsGame.Tests.Players
             var parser = new RPSMoveParser();
             var player = new RPSPlayer("Player", moveSource, parser);
 
-            Assert.Throws<InvalidMoveAttemptException>(() => player.NextMove());
+            Assert.That(() => player.NextMove(), Throws.Exception.TypeOf<InvalidMoveAttemptException>());
         }
 
         [Test]
         public void NextMove_WhenThereIsUnexpectedError_ThrowsNextMoveCriticalFailureException()
         {
             var moveSource = Substitute.For<IMoveSource>();
-            moveSource.NextMove().Returns(_ => throw new Exception("Something went wrong"));
+            _ = moveSource.NextMove().Returns(_ => throw new WebException("Something went wrong... in the Internets!!!"));
             var parser = new RPSMoveParser();
             var player = new RPSPlayer("Player", moveSource, parser);
 
-            Assert.Throws<NextMoveCriticalFailureException>(() => player.NextMove());
+            Assert.That(() => player.NextMove(), Throws.Exception.TypeOf<NextMoveCriticalFailureException>());
         }
     }
 }

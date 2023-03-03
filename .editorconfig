@@ -455,6 +455,8 @@ dotnet_diagnostic.SA1408.severity = silent
 dotnet_diagnostic.SA0001.severity = silent
 # SA1117: Parameters should be on same line or separate lines
 dotnet_diagnostic.SA1117.severity = none
+# SA1118: Parameter should not span multiple lines
+dotnet_diagnostic.SA1118.severity = silent
 # The name of a parameter in C# does not begin with a lower-case letter.
 # Triggered by discards - "_"
 dotnet_diagnostic.SA1313.severity = none
@@ -542,7 +544,7 @@ dotnet_diagnostic.SA1513.severity = error
 dotnet_diagnostic.SA1106.severity = error
 
 # Default severity for analyzer diagnostics with category 'StyleCop.CSharp.DocumentationRules'
-dotnet_analyzer_diagnostic.category-StyleCop.CSharp.DocumentationRules.severity = warning
+dotnet_analyzer_diagnostic.category-StyleCop.CSharp.DocumentationRules.severity = silent
 csharp_using_directive_placement = outside_namespace:suggestion
 csharp_prefer_simple_using_statement = true:suggestion
 csharp_style_namespace_declarations = block_scoped:silent

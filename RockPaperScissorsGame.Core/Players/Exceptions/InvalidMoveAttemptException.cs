@@ -4,6 +4,7 @@
     {
         public InvalidMoveAttemptException(string message, Exception internalException)
             : base(message, internalException)
-        { }
+        {
+        }
     }
 }

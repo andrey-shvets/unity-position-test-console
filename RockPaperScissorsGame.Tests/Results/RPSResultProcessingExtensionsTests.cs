@@ -1,5 +1,4 @@
-﻿using FluentAssertions;
-using RockPaperScissorsGame.Core.Moves;
+﻿using RockPaperScissorsGame.Core.Moves;
 using RockPaperScissorsGame.Core.Results;
 
 namespace RockPaperScissorsGame.Tests.Results
@@ -68,8 +67,12 @@ namespace RockPaperScissorsGame.Tests.Results
         public void Against_WithInvalidMove_ThrowsArgumentOutOfRangeException()
         {
             var notRealMove = (RPSMove)99;
-            Assert.That(() => RPSMove.Rock.Against(notRealMove), Throws.Exception.TypeOf<ArgumentOutOfRangeException>());
-            Assert.That(() => notRealMove.Against(RPSMove.Paper), Throws.Exception.TypeOf<ArgumentOutOfRangeException>());
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(() => RPSMove.Rock.Against(notRealMove), Throws.Exception.TypeOf<ArgumentOutOfRangeException>());
+                Assert.That(() => notRealMove.Against(RPSMove.Paper), Throws.Exception.TypeOf<ArgumentOutOfRangeException>());
+            });
         }
     }
 }

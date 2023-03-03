@@ -1,5 +1,4 @@
-﻿using FluentAssertions;
-using RockPaperScissorsGame.Core.Moves;
+﻿using RockPaperScissorsGame.Core.Moves;
 using RockPaperScissorsGame.Core.Moves.Exceptions;
 
 namespace RockPaperScissorsGame.Tests.Moves
@@ -36,7 +35,7 @@ namespace RockPaperScissorsGame.Tests.Moves
         [TestCase(null)]
         [TestCase("")]
         [TestCase(" ")]
-        public void Parse_ForInvalidMoveName_ThrowsParseMoveException(string name)
+        public void Parse_ForInvalidMoveName_ThrowsParseMoveException(string? name)
         {
             var parser = new RPSMoveParser();
 
