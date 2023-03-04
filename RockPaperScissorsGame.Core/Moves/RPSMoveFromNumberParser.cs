@@ -8,25 +8,25 @@ namespace RockPaperScissorsGame.Core.Moves
 
         public RPSMove Parse(string? move)
         {
-            var isParsed = int.TryParse(move, out var moveId);
+            var isParsed = int.TryParse(move, out var moveNumber);
 
             if (!isParsed)
                 throw new ParseMoveException(
                     move,
                     $"Failed to parse `{move}` to a number... or let's call it rock-paper-scissors move id, it sounds like it is something serious.");
 
-            var normalizedMoveId = IntToMoveId(moveId);
-            return GetMove(normalizedMoveId);
+            var moveId = IntToMoveId(moveNumber);
+            return GetMove(moveId);
         }
 
-        private static int IntToMoveId(int moveId)
+        private static int IntToMoveId(int value)
         {
-            var normalizedMoveId = moveId % TotalMovesCount;
+            var moveId = value % TotalMovesCount;
 
-            if (normalizedMoveId < 0)
-                normalizedMoveId += TotalMovesCount;
+            if (moveId < 0)
+                moveId += TotalMovesCount;
 
-            return normalizedMoveId;
+            return moveId;
         }
 
         private static RPSMove GetMove(int moveId) =>
