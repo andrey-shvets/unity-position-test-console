@@ -57,11 +57,11 @@ namespace RockPaperScissorsGame.Game
 
                     continue;
                 }
-                catch (NextMoveCriticalFailureException _)
+                catch (NextMoveCriticalFailureException)
                 {
                     Console.WriteLine($"Something went very wrong. The space-time continuum is broken. {player.Name}, YOU BAST~!!!");
                     await Task.Delay(TimeSpan.FromSeconds(1));
-                    Console.WriteLine("Everything explodes.");
+                    Console.WriteLine("[Everything explodes]");
                     await Task.Delay(TimeSpan.FromSeconds(1));
 
                     throw;

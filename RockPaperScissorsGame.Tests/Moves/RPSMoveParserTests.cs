@@ -39,7 +39,7 @@ namespace RockPaperScissorsGame.Tests.Moves
         {
             var parser = new RPSMoveParser();
 
-            Assert.Throws<ParseMoveException>(() => parser.Parse(name));
+            Assert.That(() => parser.Parse(name), Throws.Exception.TypeOf<ParseMoveException>());
         }
     }
 }
